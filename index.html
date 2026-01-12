@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <span class="logo">HUB</span>
+            <button id="toggle-btn" onclick="toggleSidebar()">☰</button>
+        </div>
+        <div class="menu-items">
+            <button class="nav-btn active" onclick="showSection('home')">
+                <span class="icon" style="color: #FF8484;">🏠</span><span class="text">Home</span>
+            </button>
+            <button class="nav-btn" onclick="showSection('games')">
+                <span class="icon" style="color: #4DCCBD;">🎮</span><span class="text">Games</span>
+            </button>
+            <button class="nav-btn" onclick="showSection('proxy')">
+                <span class="icon" style="color: #D6FFF6;">🌐</span><span class="text">Proxy</span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section id="home" class="content-section">
+            <h1 style="color: #D6FFF6;">Welcome</h1>
+            <p>Your centralized gaming hub.</p>
+        </section>
+
+        <section id="games" class="content-section" style="display:none;">
+            <h1 style="color: #4DCCBD;">Game Library</h1>
+            <div id="game-grid" class="grid">
+                </div>
+        </section>
+
+        <section id="proxy" class="content-section" style="display:none;">
+            <h1 style="color: #FF8484;">Proxy Service</h1>
+            <div class="proxy-box">
+                <input type="text" placeholder="https://..." id="url-input">
+                <button class="proxy-go" onclick="startProxy()">Go</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="game-overlay" style="display:none;">
+        <button class="close-btn" onclick="closeGame()">× Close</button>
+        <iframe id="game-frame" src=""></iframe>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
